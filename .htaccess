@@ -1,0 +1,11 @@
+<Files ~ "\.pm$">  
+Order Allow,Deny
+Deny from All
+</Files>
+
+RewriteEngine on
+
+RewriteCond %{SCRIPT_FILENAME} !-f
+RewriteCond %{SCRIPT_FILENAME} !-d
+RewriteCond %{SCRIPT_FILENAME} !-l
+RewriteRule ^(.*)$ index.cgi/$1
